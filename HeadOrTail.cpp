@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <random>
+#include <string>
 
 using namespace std;
 
@@ -11,6 +12,12 @@ int main()
     int headsCounter = 0;
     int tailsCounter = 0;
 
+
+    char str[100];
+
+    printf("Who are you?\n");
+    scanf("%99s", str);  // %99s を使ってバッファサイズを超えないようにする
+    printf("Hello, %s!\n", str);
 
     printf("Tossing a coin...\n");
 
@@ -32,18 +39,13 @@ int main()
         printf("\n");
 
     }
-    if(headsCounter > tailsCounter){
-        printf("You won\n");
-    } else if(headsCounter < tailsCounter){
-        printf("You lost\n");
-    }
 
     printf("Heads: %d, Tails: %d\n",headsCounter,tailsCounter);
 
     if(headsCounter > tailsCounter){
-        printf("You won\n");
+        printf("%s won!\n",str);
     } else if(headsCounter < tailsCounter){
-        printf("You lost\n");
+        printf("%s lost\n",str);
     }
 }
 
